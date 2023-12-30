@@ -4,8 +4,12 @@ import Logo from '../Logo'
 import Link from 'next/link'
 import { Button, buttonVariants } from '../ui/button'
 import clsx from 'clsx'
+import { useState } from 'react'
+import Image from 'next/image'
 
 const Navbar = () => {
+    const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
+
     return (
         <div className='fixed inset-x-0 top-0 backdrop-blur-md z-10'>
             <div className='main-container border-b h-20 flex items-center justify-between gap-6'>
@@ -28,14 +32,34 @@ const Navbar = () => {
                 </div>
 
                 {/* sign in/ sign up section  */}
-                <div className='flex items-center gap-4'>
-                    <Button className={clsx(buttonVariants({variant:'outline'}),'rounded text-muted-foreground')}>
-                        Sign Up
-                    </Button>
-                    <Button className={'rounded'}>
-                        Sign In
-                    </Button>
-                </div>
+                {
+                    !isSignedIn ?
+                        <div className='flex items-center gap-4'>
+                            <Button onClick={() => setIsSignedIn(true)} className={clsx(buttonVariants({ variant: 'outline' }), 'rounded text-muted-foreground')}>
+                                Sign Up
+                            </Button>
+                            <Button onClick={() => setIsSignedIn(true)} className={'rounded'}>
+                                Sign In
+                            </Button>
+                        </div>
+                        :
+                        <Link
+                            href={'/profile'}
+                            className='flex items-center gap-2 '
+                        >
+                            <div className='relative w-8 h-8'>
+                                <Image
+                                    src={'/user.avif'}
+                                    fill
+                                    className='relative object-cover rounded-full'
+                                    alt='user'
+                                />
+                            </div>
+                            <div className=''>
+                                Amrish
+                            </div>
+                        </Link>
+                }
             </div>
         </div>
     )

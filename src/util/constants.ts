@@ -1,3 +1,5 @@
+import { BarChartHorizontalBig, LayoutDashboard, Settings } from "lucide-react"
+
 export const pricingPlan = [
     {
         id: 1,
@@ -70,5 +72,46 @@ export const pricingPlan = [
                 isActive: true,
             },
         ]
+    }
+]
+
+export const sidebarMenu = [
+    {
+        name: 'Dashboard',
+        redirectTo: '/profile',
+        Icon: LayoutDashboard
+    },
+    {
+        name: 'Graphs',
+        redirectTo: '/profile/graphs',
+        Icon: BarChartHorizontalBig
+    },
+    {
+        name: 'Settings',
+        redirectTo: '/profile/settings',
+        Icon: Settings
+    },
+];
+
+export const userPersonalDetail = [
+    {
+        name: 'Name',
+        value: 'Amrish Kumar',
+        type: 'text'
+    },
+    {
+        name: 'Bio',
+        value: 'AI Influencer',
+        type: 'text'
+    },
+    {
+        name: 'Password',
+        value: 'password',
+        type: 'password'
+    },
+    {
+        name: 'Email',
+        value: 'amrish@gmail.com',
+        type: 'email'
     }
 ]

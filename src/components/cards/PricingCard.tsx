@@ -15,11 +15,13 @@ interface Props {
     subtitle: string
     id: number
     isMonthly?: boolean
+    isActive?: boolean
+    onClick: (value: number) => void
 }
 
-const PricingCard = ({ title, price, properties, subtitle, id, isMonthly = false }: Props) => {
+const PricingCard = ({ title, price, properties, subtitle, id, isMonthly = false, isActive = false, onClick }: Props) => {
     return (
-        <div className={`p-6 border rounded-xl flex flex-col gap-4 bg-[rgba(255,255,255,0.025)] hover:bg-[rgba(255,255,255,0.0125)] transition group hover:border-muted-foreground shadow-sm duration-300 hover:shadow-lg translate-y-0 scale-100 hover:-translate-y-2 hover:scale-[1.01]`}>
+        <div className={`p-6 border ${isActive && 'border-primary'} rounded-xl flex flex-col gap-4 bg-[rgba(255,255,255,0.025)] hover:bg-[rgba(255,255,255,0.0125)] transition group ${isActive ? 'border-primary' : 'hover:border-muted-foreground'} shadow-sm duration-300 hover:shadow-lg translate-y-0 scale-100 hover:-translate-y-2 hover:scale-[1.01]`}>
             <h2 className='text-2xl font-semibold'>
                 {title}
             </h2>
@@ -47,17 +49,17 @@ const PricingCard = ({ title, price, properties, subtitle, id, isMonthly = false
                         </div>
                     </div>
                     :
-                    <div className='flex items-center gap-2 px-4 py-1 rounded-xl'>
+                    <div className='flex items-center gap-2 px-4 py-2 justify-center rounded border cursor-pointer border-primary text-primary'>
                         <Phone
-                            size={20}
+                            size={15}
                         />
-                        <div className='text-2xl font-medium'>
+                        <div className=''>
                             Contact Us
                         </div>
                     </div>
             }
-            <Button className={clsx(buttonVariants({ variant: 'default' }), 'rounded font-semibold')}>
-                Subscribe Now
+            <Button disabled={isActive} onClick={() => onClick(id)} className={clsx(buttonVariants({ variant: 'default' }), 'rounded font-semibold')}>
+                {isActive ? 'Subscribed' : 'Subscribe Now'}
             </Button>
             <div className='border-b border-dashed' />
 

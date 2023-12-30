@@ -7,6 +7,7 @@ import React, { useCallback, useState } from 'react'
 
 const PrincingSection = () => {
     const [isMonthy, setIsMonthly] = useState<boolean>(true);
+    const [isActivePlan, setIsActivePlan] = useState<number>(0);
 
     const togglePlan = useCallback((value: boolean) => {
         setIsMonthly(value)
@@ -34,7 +35,7 @@ const PrincingSection = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-2 mb-6'>
                 {
                     pricingPlan.map((item) => (
                         <PricingCard
@@ -45,6 +46,8 @@ const PrincingSection = () => {
                             subtitle={item.subtitle}
                             id={item.id}
                             isMonthly={isMonthy}
+                            isActive={isActivePlan === item.id}
+                            onClick={(value: number) => setIsActivePlan(value)}
                         />
                     ))
                 }
