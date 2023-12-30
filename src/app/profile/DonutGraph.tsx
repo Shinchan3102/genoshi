@@ -1,51 +1,25 @@
 'use client'
 
-import { Card, DonutChart, Title } from "@tremor/react";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2";
 
-const cities = [
-  {
-    name: "New York",
-    sales: 9800,
-  },
-  {
-    name: "London",
-    sales: 4567,
-  },
-  {
-    name: "Hong Kong",
-    sales: 3908,
-  },
-  {
-    name: "San Francisco",
-    sales: 2400,
-  },
-  {
-    name: "Singapore",
-    sales: 1908,
-  },
-  {
-    name: "Zurich",
-    sales: 1398,
-  },
-];
-
-const valueFormatter = (number:number) => `$ ${new Intl.NumberFormat("us").format(number).toString()}`;
-
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DonutGraph = () => {
+
+  const data = {
+    labels: ['Chart Created', 'Chart Shared', 'Papers Uploaded'],
+    datasets: [
+      {
+        data: [20, 10, 30],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+        hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      },
+    ],
+  };
   return (
-    <div className="w-full  border relative rounded">
-      <Card className="w-full">
-        <Title>Sales</Title>
-        <DonutChart
-          className="mt-6"
-          data={cities}
-          category="sales"
-          index="name"
-          valueFormatter={valueFormatter}
-          colors={["slate", "violet", "indigo", "rose", "cyan", "amber"]}
-        />
-      </Card>
+    <div className="w-full max-h-[500px] justify-center flex p-8  border relative rounded">
+      <Doughnut data={data} />
     </div>
   )
 }

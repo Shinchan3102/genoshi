@@ -12,7 +12,7 @@ const RecentActivity = () => {
             <div className='flex flex-col gap-2 mt-4'>
                 {
                     activityChart.map((item, index) => (
-                        <div className={`flex items-center justify-between gap-4 ${index !== activityChart.length - 1 && 'border-b'} py-2`}>
+                        <div key={item.name} className={`flex items-center justify-between gap-4 ${index !== activityChart.length - 1 && 'border-b'} py-2`}>
                             <div className='flex-1 line-clamp-1 text-sm text-muted-foreground'>
                                 {item.name}
                             </div>
