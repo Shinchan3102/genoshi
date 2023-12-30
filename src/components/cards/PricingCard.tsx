@@ -3,7 +3,7 @@ import React from 'react'
 import { Button, buttonVariants } from '../ui/button'
 import clsx from 'clsx'
 
-type PriceProperty = {
+export type PriceProperty = {
     name: string
     isActive: boolean
 }

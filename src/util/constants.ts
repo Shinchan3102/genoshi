@@ -1,4 +1,4 @@
-import { BarChartHorizontalBig, LayoutDashboard, Settings } from "lucide-react"
+import { BarChartHorizontalBig, FilePieChartIcon, Layers, LayoutDashboard, Settings, Share2Icon } from "lucide-react"
 
 export const pricingPlan = [
     {
@@ -129,4 +129,50 @@ export const userPersonalDetail = [
         value: 'amrish@gmail.com',
         type: 'email'
     }
+]
+
+
+export const dashboardCards=[
+    {
+        name:'Graphs Created',
+        value: 20,
+        Icon: FilePieChartIcon
+    },
+    {
+        name:'Graphs Shared',
+        value: 10,
+        Icon: Share2Icon
+    },
+    {
+        name:'Papers Collected',
+        value: 30,
+        Icon: Layers
+    },
+]
+
+export const activityChart=[
+    {
+        name: 'Added one graph',
+        date: '22 Aug 2023'
+    },
+    {
+        name: 'Added one paper',
+        date: '22 Aug 2023'
+    },
+    {
+        name: 'Added one list',
+        date: '22 Aug 2023'
+    },
+    {
+        name: 'Added one graphs',
+        date: '22 Aug 2023'
+    },
+    {
+        name: 'Added one graphs',
+        date: '22 Aug 2023'
+    },
+    {
+        name: 'Added one graphs',
+        date: '22 Aug 2023'
+    },
 ]
