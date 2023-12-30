@@ -25,7 +25,7 @@ const Header = () => {
                 <div
                     className='flex items-center gap-2 '
                 >
-                    <div className='relative w-8 h-8'>
+                    <div className='relative w-10 h-10'>
                         <Image
                             src={'/user.avif'}
                             fill

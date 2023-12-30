@@ -7,7 +7,7 @@ export default function Home() {
 
       {/* heading section  */}
       <section className='flex flex-col gap-6 items-center justify-center h-[400px]'>
-        <h1 className='font-bold sm:text-5xl text-3xl tracking-wide'>
+        <h1 className='font-bold sm:text-5xl text-3xl tracking-wide text-gradient w-full text-center'>
           Fueling Your Growth Journey
         </h1>
         <h4 className='md:text-xl text-lg text-muted-foreground'>
