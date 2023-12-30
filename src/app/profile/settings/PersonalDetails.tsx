@@ -10,6 +10,11 @@ const PersonalDetails = () => {
     const [isEdit, setIsEdit] = useState<boolean>(false);
 
     const [personalData, setPersonalData] = useState(userPersonalDetail);
+
+    const handleChange = (name: string, value: string) => {
+        console.log(name, value)
+        setPersonalData((prev) => prev.map((item) => item.name === name ? { ...item, value: value } : item));
+    }
     return (
         <div className='flex flex-col gap-4'>
             <div className='flex items-center gap-4 justify-between'>
@@ -33,6 +38,7 @@ const PersonalDetails = () => {
                             key={item.name}
                             name={item.name}
                             type={item.type}
+                            handleChange={handleChange}
                             value={item.value}
                             isEdit={isEdit}
                         />
