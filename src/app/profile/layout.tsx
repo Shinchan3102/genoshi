@@ -19,7 +19,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${inter.className} flex min-h-screen`}>
-                <div className='max-w-xs w-full h-screen border-r flex flex-col'>
+                <div className='max-w-xs w-full h-screen border-r md:flex flex-col hidden'>
                     <Sidebar />
                 </div>
                 <div className='flex-1 flex flex-col h-screen'>

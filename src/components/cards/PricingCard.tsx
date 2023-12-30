@@ -22,16 +22,16 @@ interface Props {
 const PricingCard = ({ title, price, properties, subtitle, id, isMonthly = false, isActive = false, onClick }: Props) => {
     return (
         <div className={`p-6 border ${isActive && 'border-primary'} rounded-xl flex flex-col gap-4 bg-[rgba(255,255,255,0.025)] hover:bg-[rgba(255,255,255,0.0125)] transition group ${isActive ? 'border-primary' : 'hover:border-muted-foreground'} shadow-sm duration-300 hover:shadow-lg translate-y-0 scale-100 hover:-translate-y-2 hover:scale-[1.01]`}>
-            <h2 className='text-2xl font-semibold'>
+            <h2 className='sm:text-2xl text-xl font-semibold'>
                 {title}
             </h2>
-            <h3 className='-mt-2 text-gray-500'>
+            <h3 className='-mt-2 text-gray-500 text-sm sm:text-base'>
                 {subtitle}
             </h3>
             {
                 id != 3 ?
                     <div className='flex items-end gap-2'>
-                        <h1 className='text-4xl font-bold'>
+                        <h1 className='md:text-4xl text-2xl font-bold'>
                             {
                                 isMonthly ?
                                     price
@@ -39,7 +39,7 @@ const PricingCard = ({ title, price, properties, subtitle, id, isMonthly = false
                                     price[0] + (parseInt(price.slice(1)) * 10)
                             }
                         </h1>
-                        <div className='text-gray-500'>
+                        <div className='text-sm md:text-base text-gray-500'>
                             {
                                 isMonthly ?
                                     'monthly'

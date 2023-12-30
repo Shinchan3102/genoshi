@@ -75,6 +75,21 @@ export const pricingPlan = [
     }
 ]
 
+export const navbarItems=[
+    {
+        name: 'Home',
+        redirectTo: '/',
+    },
+    {
+        name: 'Pricing',
+        redirectTo: '/',
+    },
+    {
+        name: 'Contact',
+        redirectTo: '/',
+    },
+]
+
 export const sidebarMenu = [
     {
         name: 'Dashboard',

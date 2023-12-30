@@ -16,11 +16,11 @@ const PrincingSection = () => {
     return (
         <section className='flex flex-col gap-6 items-center'>
 
-            <h1 className='text-4xl font-semibold'>
+            <h1 className='md:text-4xl text-2xl font-semibold'>
                 Our Pricing Plans
             </h1>
 
-            <div className='flex font-medium text-lg items-center gap-4 mt-6'>
+            <div className='flex font-medium md:text-lg text-base items-center gap-4 mt-6'>
                 <div className={`transition cursor-pointer ${isMonthy ? 'text-muted-foreground' : 'text-muted'}`} onClick={() => togglePlan(true)}>
                     Monthly Plans
                 </div>

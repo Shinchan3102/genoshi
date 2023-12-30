@@ -5,13 +5,12 @@ import Logo from '../Logo'
 import ProfileOverview from '../ProfileOverview'
 import { sidebarMenu } from '@/util/constants'
 import SidebarMenu from './SidebarMenu'
-import { Button, buttonVariants } from '../ui/button'
-import clsx from 'clsx'
 import { LogOut } from 'lucide-react'
+import Link from 'next/link'
 
 const Sidebar = () => {
     return (
-        <div className='w-full flex flex-col flex-1 p-6 gap-4'>
+        <div className='w-full flex-col flex-1 p-6 gap-4 overflow-y-auto flex'>
             <div className='flex justify-center items-center'>
                 <Logo
                     dimension={150}
@@ -36,12 +35,12 @@ const Sidebar = () => {
                     }
                 </div>
 
-                <div className='border border-red-600 justify-center text-red-600 hover:bg-red-600 hover:text-white transition cursor-pointer rounded px-4 py-2 flex items-center gap-3'>
+                <Link href={'/'} className='border border-red-600 justify-center text-red-600 hover:bg-red-600 hover:text-white transition cursor-pointer rounded px-4 py-2 flex items-center gap-3'>
                     <LogOut />
                     <div className=''>
                         Logout
                     </div>
-                </div>
+                </Link>
             </div>
         </div>
     )

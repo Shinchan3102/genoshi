@@ -1,14 +1,11 @@
 'use client'
 
 import Logo from '../Logo'
-import Link from 'next/link'
-import { Button, buttonVariants } from '../ui/button'
-import clsx from 'clsx'
-import { useState } from 'react'
-import Image from 'next/image'
+import MenuItems from './MenuItems'
+import NavSheet from './NavSheet'
+import UserMenu from './UserMenu'
 
 const Navbar = () => {
-    const [isSignedIn, setIsSignedIn] = useState<boolean>(false);
 
     return (
         <div className='fixed inset-x-0 top-0 backdrop-blur-md z-10'>
@@ -19,47 +16,18 @@ const Navbar = () => {
                     dimension={120}
                 />
 
-                <div className='flex items-center gap-2'>
-                    <Link href={'/'} className='px-4 transition hover:bg-[rgba(255,255,255,0.1)] rounded py-1.5'>
-                        Home
-                    </Link>
-                    <Link href={`/`} className='px-4 transition hover:bg-[rgba(255,255,255,0.1)] rounded py-1.5'>
-                        Pricing
-                    </Link>
-                    <Link href={`/`} className='px-4 transition hover:bg-[rgba(255,255,255,0.1)] rounded py-1.5'>
-                        Contact
-                    </Link>
+                <div className='hidden items-center gap-2 md:flex'>
+                    <MenuItems />
                 </div>
 
                 {/* sign in/ sign up section  */}
-                {
-                    !isSignedIn ?
-                        <div className='flex items-center gap-4'>
-                            <Button onClick={() => setIsSignedIn(true)} className={clsx(buttonVariants({ variant: 'outline' }), 'rounded text-muted-foreground')}>
-                                Sign Up
-                            </Button>
-                            <Button onClick={() => setIsSignedIn(true)} className={'rounded'}>
-                                Sign In
-                            </Button>
-                        </div>
-                        :
-                        <Link
-                            href={'/profile'}
-                            className='flex items-center gap-2 '
-                        >
-                            <div className='relative w-8 h-8'>
-                                <Image
-                                    src={'/user.avif'}
-                                    fill
-                                    className='relative object-cover rounded-full'
-                                    alt='user'
-                                />
-                            </div>
-                            <div className=''>
-                                Amrish
-                            </div>
-                        </Link>
-                }
+                <div className='hidden items-center md:block'>
+                    <UserMenu />
+                </div>
+
+                <div className='block md:hidden'>
+                    <NavSheet />
+                </div>
             </div>
         </div>
     )
