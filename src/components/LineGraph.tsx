@@ -197,10 +197,10 @@ const chartdata = [
 const LineGraph = ({ title, id, isLiked, handleLike, handleDelete }: { title: string, id: number, isLiked: boolean, handleLike: (id: number) => void, handleDelete: (id: number) => void }) => {
     return (
         <div className="w-full relative">
-            <Card>
+            <Card className="">
                 <Title>{title}</Title>
                 <LineChart
-                    className="h-72 mt-4"
+                    className="h-56 sm:h-72 mt-4"
                     data={chartdata}
                     index="date"
                     categories={["Export Growth Rate"]}

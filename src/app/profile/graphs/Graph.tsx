@@ -59,7 +59,7 @@ const Graph = () => {
     setData((prev) => prev.filter((item) => item.id !== id))
   }
   return (
-    <div className='flex flex-col gap-8 pr-6'>
+    <div className='flex flex-col gap-8 pr-4 md:pr-6'>
       <div className='flex justify-between items-center gap-6'>
         <h1 className='text-2xl font-medium'>
           My Graphs
