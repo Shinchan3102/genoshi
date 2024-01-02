@@ -2,7 +2,7 @@
 import React from 'react'
 import DashboardCards from './DashboardCards'
 import RecentActivity from './RecentActivity'
-import DonutGraph from './DonutGraph'
+import BarGraph from './BarGraph'
 
 const page = () => {
   return (
@@ -12,7 +12,8 @@ const page = () => {
 
       <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 w-full'>
         <div className='col-span-1 lg:col-span-2'>
-          <DonutGraph />
+          <BarGraph />
+          {/* <DonutGraph /> */}
         </div>
 
         <div className=''>
